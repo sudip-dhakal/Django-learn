@@ -28,21 +28,21 @@
 </div>
 </form> -->
 
-<div class="sudip" method="POST" action="{% url 'thanks' %}">
-    <form>
-     {% csrf_token %}
-
-     {{formdata}}
-        <!-- <label for="value1">Value1</label><br>
+<div class="sudip" >
+    <form method="POST">
+     
+        {% csrf_token %}
+     <!-- {{formdata}} -->
+        <label for="value1">Value1</label><br>
         <input type="text" name="value1" id="none"><br><br>
 
         <label for="Value2">Value2</label><br>
-        <input type="text" name="value2" id="none1"><br><br> -->
+        <input type="text" name="value2" id="none1"><br><br>
     
         <button type="submit" class="send-data">Send</button>
         <br><br>
         <label>Output </label>
-        <input type="text" value="{{output}}">
+        <input type="text" value="{{final}}">
 
         
     </form>
