@@ -21,5 +21,5 @@ from working_with_django_forms import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.check),
-    # path('thanks',views.thankyou, name='thanks')
+    path('thanks',views.thankyou, name='thanks')
 ]

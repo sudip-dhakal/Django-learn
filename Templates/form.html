@@ -29,20 +29,20 @@
 </form> -->
 
 <div class="sudip" >
-    <form method="POST">
+    <form method="GET">
      
-        {% csrf_token %}
+        <!-- {% csrf_token %} -->
      <!-- {{formdata}} -->
         <label for="value1">Value1</label><br>
-        <input type="text" name="value1" id="none"><br><br>
+        <input type="text" name="value1" value="{{n1}}" id="none"><br><br>
 
         <label for="Value2">Value2</label><br>
-        <input type="text" name="value2" id="none1"><br><br>
+        <input type="text" name="value2" value="{{n2}}" id="none1"><br><br>
     
         <button type="submit" class="send-data">Send</button>
         <br><br>
         <label>Output </label>
-        <input type="text" value="{{final}}">
+        <input type="text" value="{{output}}">
 
         
     </form>

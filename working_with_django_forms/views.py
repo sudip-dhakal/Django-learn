@@ -1,18 +1,26 @@
 from django.shortcuts import render
-from .forms import Userforms
+from django.http import HttpResponseRedirect,HttpResponse
+# from .forms import Userforms
 
-global n1
-global n2
-global final
+
 def check(request):
+    data={}
     final=0
     try:
-        if request.method=='POST':
-            n1=int(request.POST.get('value1'))
-            n2=int(request.POST.get('value2'))
-            final=n1+n2
+        if request.method=='GET':
+            n1=int(request.GET.get('value1'))
+            n2=int(request.GET.get('value2'))
+            finalans=n1+n2
 
-        print(final)
+            data={
+                'n1':n1,
+                'n2':n2,
+                'output':finalans
+            }
+
+            print(final)
+            url="/thanks?final={}".format(final)
+            return HttpResponseRedirect(url)
 
         
             
@@ -20,5 +28,11 @@ def check(request):
         pass
 
 
-    return render(request,"form.html",{'final':final})
+    return render(request,"form.html",data)
+
+
+def thankyou(request):
+    if request.method=="GET":
+        output1=request.GET.get('final')
+    return render(request,"thanks.html",{'final':output1})
 
