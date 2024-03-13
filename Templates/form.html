@@ -10,39 +10,22 @@
 
     <h1>Please fill up this form </h1><br><br>
 
-    <!-- <div class="form">
-<div class="for-name">
-    <label for="Username">Username</label>
-    <input type="Username" name="name" id="for-name"><br><br></div>
-<div class="for-password">
-    <label for="password">Password</label>
-    <input type="password" name="name" id="for-password"><br><br></div>
-<div class="for-email">
-    <label for="Email">Email</label>
-    <input type="Email" name="name" id="for-Email"><br><br></div>
-<div class="for-text">
-    <label>Fill your extra description</label><br><br>
-    <textarea name="enter-here" id="for_text" cols="10" rows="2"></textarea></div>
-
-    <button type="submit" value="Send" class="send" id="send-the">Send</button>
-</div>
-</form> -->
-
-<div class="sudip" >
+<div class="sudip"  >
     <form method="GET">
      
-        <!-- {% csrf_token %} -->
      <!-- {{formdata}} -->
         <label for="value1">Value1</label><br>
         <input type="text" name="value1" value="{{n1}}" id="none"><br><br>
 
         <label for="Value2">Value2</label><br>
         <input type="text" name="value2" value="{{n2}}" id="none1"><br><br>
+
+        <label>Output </label><br>
+        <input type="text" value="{{output}}"><br><br>
     
         <button type="submit" class="send-data">Send</button>
         <br><br>
-        <label>Output </label>
-        <input type="text" value="{{output}}">
+        
 
         
     </form>

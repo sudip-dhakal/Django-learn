@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 
 def check(request):
     data={}
-    final=0
+    finalans=0
     try:
         if request.method=='GET':
             n1=int(request.GET.get('value1'))
@@ -18,21 +18,22 @@ def check(request):
                 'output':finalans
             }
 
-            print(final)
-            url="/thanks?final={}".format(final)
-            return HttpResponseRedirect(url)
+            
+            return HttpResponse(finalans)
 
         
             
     except:
         pass
 
-
     return render(request,"form.html",data)
 
 
 def thankyou(request):
-    if request.method=="GET":
-        output1=request.GET.get('final')
-    return render(request,"thanks.html",{'final':output1})
+    if request.method=='GET':
+        output=request.GET['final']
+        print(output)
+        return render(request,'thanks.html',{'output':output})
+    
+    
 
